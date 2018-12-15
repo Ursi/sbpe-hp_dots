@@ -5,5 +5,5 @@
 - `dot_color`, `dot_outline`: dot colors.
 ### `[plugin_playerlist]` - player list
 
-- `visible`: recommended to keep disabled and add a keybind. Default key is V.
+- `visible`: recommended to keep disabled and add a keybind.
 - `size`: font size.
