@@ -23,7 +23,6 @@ SHELL_MIN_HP = {
 
 COLUMNS = 'shell name faction hpPercent'.split()
 
-
 class Plugin(PluginBase):
 	def onInit(self):
 		self.config.option('visible', False, 'bool')
@@ -41,9 +40,6 @@ class Plugin(PluginBase):
 		if cw == ffi.NULL:
 			return
 
-		if cw.asWorld.props.safe:
-			# wipe old records in safe zones
-			self.seen = {}
 		self.ct = time.perf_counter()
 
 		allies = util.vec2list(cw.allies, 'struct WorldObject *')
@@ -63,7 +59,7 @@ class Plugin(PluginBase):
 					shell = '?'
 				if vid in SHELL_MIN_HP and p.maxhitpoints > 0:
 					mk = 1 + (p.maxhitpoints - SHELL_MIN_HP[vid]) // 10
-					
+
 					if mk >= 6:
 						if p.maxhitpoints % 5 == 0:
 							if mk == 10: # mk6 with salites
@@ -97,7 +93,7 @@ class Plugin(PluginBase):
 					else:
 						shell += str(mk)	
 						sort = mk
-						
+											
 				wasSpark = False
 				hpPercent = str(round(100 * p.hitpoints/p.maxhitpoints))
 			else:
@@ -106,7 +102,7 @@ class Plugin(PluginBase):
 					sort = 0
 				else:
 					shell = self.seen[acc][3]
-					sort = self.seen[acc][5]
+					sort = self.seen[acc][7]
 				wasSpark = True
 				hpPercent = ''
 			
