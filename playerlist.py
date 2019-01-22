@@ -91,7 +91,7 @@ class Plugin(PluginBase):
 								shell += '4+'
 								sort = 4.5
 					else:
-						shell += str(mk)	
+						shell += str(mk)
 						sort = mk
 											
 				wasSpark = False
@@ -106,10 +106,12 @@ class Plugin(PluginBase):
 				wasSpark = True
 				hpPercent = ''
 			
-			
-			
-			boss = False if util.getstr(cw.asWorld.props.zone) else True
-			
+			cProps = cw.asWorld.props
+			if util.getstr(cProps.zone) or util.getstr(cProps.music) == 'hulk':
+				boss = False
+			else:
+				boss = True
+				
 			self.seen[acc] = (self.ct, name, faction, shell, hpPercent, wasSpark, boss, sort)
 
 	def onPresent(self):
