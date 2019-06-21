@@ -107,7 +107,7 @@ class Plugin(PluginBase):
 				hpPercent = ''
 			
 			cProps = cw.asWorld.props
-			if util.getstr(cProps.zone) or util.getstr(cProps.music) == 'hulk':
+			if util.getstr(cProps.zone) or util.getstr(cProps.music) == 'hulk' or util.getstr(cProps.music) == 'shop':
 				boss = False
 			else:
 				boss = True
