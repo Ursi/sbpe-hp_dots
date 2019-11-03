@@ -1,5 +1,5 @@
 ## Check out SBPE by atomizer [Here](https://github.com/atomizer/sbpe).
-### `[plugin_hp_dots]` - visually signifies how many hp pack are needed till max hp
+### `[plugin_hp_dots]` - visually signifies how many hp packs are needed till max hp
 
 - `dot_size`: size of the dots in pixels.
 - `dot_y`: vertical offset of the dots from the top of the character.
